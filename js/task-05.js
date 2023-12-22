@@ -1,8 +1,19 @@
-//Write a script that, when typing in the input#name-input input (input event), substitutes its current value into span#name-output. If the input is empty, the span should display the "Anonymous" string.
+ // Pobierz wszystkie elementy li.item
+  const categoriesList = document.querySelectorAll('#categories .item');
 
-const nameIn = document.querySelector("#name-input");
-const nameOut = document.querySelector("#name-output");
+  // Policz liczbę kategorii
+  const numberOfCategories = categoriesList.length;
+  console.log(`Number of categories: ${numberOfCategories}\n`);
 
-nameIn.addEventListener("input", () => {
-  nameOut.textContent = nameIn.value ? nameIn.value : "Anonymous";
-});
+  // Dla każdej kategorii
+  categoriesList.forEach(category => {
+    // Znajdź nazwę kategorii (tekst nagłówka h2)
+    const categoryName = category.querySelector('h2').textContent;
+
+    // Znajdź liczbę elementów w danej kategorii
+    const elementsInCategory = category.querySelectorAll('ul > li').length;
+
+    // Wypisz nazwę kategorii i liczbę elementów w konsoli
+    console.log(`Category: ${categoryName}`);
+    console.log(`Elements: ${elementsInCategory}\n`);
+  });
