@@ -1,3 +1,8 @@
+const numOfCategEl = document.querySelector("#categories");
+
+const itemEl = numOfCategEl.childElementCount;
+
+console.log(`Number of categories: ${itemEl}`);
 const totalOfEl = document.querySelectorAll(".item");
 
 const categoryOfEl = totalOfEl.forEach((e) =>
